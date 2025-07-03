@@ -182,35 +182,7 @@ function initCopyToClipboard() {
     });
 }
 
-// ダークモード切り替え
-function initDarkMode() {
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.classList.add('dark-mode-toggle');
-    darkModeToggle.innerHTML = '🌙';
-    darkModeToggle.setAttribute('aria-label', 'ダークモード切り替え');
-    
-    const headerContent = document.querySelector('.header-content');
-    headerContent.appendChild(darkModeToggle);
-    
-    // ローカルストレージから設定を読み込み
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.innerHTML = '☀️';
-    }
-    
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        
-        if (document.body.classList.contains('dark-mode')) {
-            darkModeToggle.innerHTML = '☀️';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            darkModeToggle.innerHTML = '🌙';
-            localStorage.setItem('theme', 'light');
-        }
-    });
-}
+
 
 // 検索機能
 function initSearch() {
@@ -310,20 +282,7 @@ function initProgressBar() {
     });
 }
 
-// 印刷機能
-function initPrint() {
-    const printBtn = document.createElement('button');
-    printBtn.classList.add('print-btn');
-    printBtn.innerHTML = '🖨️';
-    printBtn.setAttribute('aria-label', '印刷');
-    
-    const headerContent = document.querySelector('.header-content');
-    headerContent.appendChild(printBtn);
-    
-    printBtn.addEventListener('click', () => {
-        window.print();
-    });
-}
+
 
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
@@ -334,10 +293,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initResponsiveMenu();
     initScrollToTop();
     initCopyToClipboard();
-    initDarkMode();
     initSearch();
     initProgressBar();
-    initPrint();
     
     // ページ読み込み時のアニメーション
     document.body.classList.add('loaded');
