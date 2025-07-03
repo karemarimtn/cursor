@@ -303,6 +303,14 @@ body {
   margin-bottom: 0;
 }
 
+.highlight-box ul {
+  color: white;
+}
+
+.highlight-box li {
+  color: white;
+}
+
 /* Features Grid */
 .features-grid {
   display: grid;
@@ -637,6 +645,11 @@ body {
     order: -1;
   }
   
+  .hero {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  
   .hero h1 {
     font-size: 2.5rem;
   }
@@ -649,8 +662,33 @@ body {
     padding: 2rem;
   }
   
+  .section {
+    text-align: left;
+  }
+  
   .section h2 {
     font-size: 2rem;
+    text-align: left;
+  }
+  
+  .section h3 {
+    text-align: left;
+  }
+  
+  .section p {
+    text-align: left;
+  }
+  
+  .feature-card {
+    text-align: center;
+  }
+  
+  .component-card {
+    text-align: center;
+  }
+  
+  .architecture-diagram {
+    text-align: center;
   }
   
   .nav {
@@ -786,22 +824,7 @@ html {
   transform: scale(1.1);
 }
 
-.dark-mode-toggle,
-.print-btn {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: var(--text-primary);
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
 
-.dark-mode-toggle:hover,
-.print-btn:hover {
-  background-color: var(--surface);
-}
 
 .search-container {
   margin-top: 2rem;
@@ -926,44 +949,7 @@ body.loaded {
   }
 }
 
-/* ダークモード */
-body.dark-mode {
-  --text-primary: #f9fafb;
-  --text-secondary: #d1d5db;
-  --background: #111827;
-  --surface: #1f2937;
-  --border: #374151;
-}
 
-body.dark-mode .hero {
-  background: linear-gradient(135deg, #4c1d95, #6b21a8);
-}
-
-body.dark-mode .main-content {
-  background: var(--surface);
-}
-
-body.dark-mode .feature-card,
-body.dark-mode .component-card {
-  background: var(--background);
-}
-
-body.dark-mode .arch-box {
-  background: var(--surface);
-}
-
-body.dark-mode .workflow-step {
-  background: var(--surface);
-}
-
-body.dark-mode .comparison-table tr:nth-child(even) {
-  background: var(--surface);
-}
-
-body.dark-mode .search-input {
-  background: var(--surface);
-  color: var(--text-primary);
-}
 
 @media (max-width: 768px) {
   .menu-toggle {
@@ -991,9 +977,7 @@ body.dark-mode .search-input {
     visibility: visible;
   }
   
-  body.dark-mode .nav {
-    background: var(--surface);
-  }
+
   
   .footer-links {
     flex-direction: column;
@@ -1001,18 +985,4 @@ body.dark-mode .search-input {
   }
 }
 
-/* Print styles */
-@media print {
-  .header, .sidebar, .footer {
-    display: none;
-  }
-  
-  .content-layout {
-    grid-template-columns: 1fr;
-  }
-  
-  .main-content {
-    box-shadow: none;
-    padding: 0;
-  }
-} 
+ 
